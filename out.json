@@ -1,0 +1,303 @@
+{
+  "artists": {
+    "items": [
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/0eDvMgVFoNV3TpwtrVCoTj"
+        },
+        "followers": { "href": None, "total": 3562070 },
+        "genres": ["brooklyn drill"],
+        "href": "https://api.spotify.com/v1/artists/0eDvMgVFoNV3TpwtrVCoTj",
+        "id": "0eDvMgVFoNV3TpwtrVCoTj",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/dec62931945371fd22f29c436ca61dea03415556",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/452b8e2959c68878477ba110bc517449023a921d",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/4d68f134b9ccfc7b9c22b4ed0abc98dccecc5fb2",
+            "width": 160
+          }
+        ],
+        "name": "Pop Smoke",
+        "popularity": 94,
+        "type": "artist",
+        "uri": "spotify:artist:0eDvMgVFoNV3TpwtrVCoTj"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/181bsRPaVXVlUKXrxwZfHK"
+        },
+        "followers": { "href": None, "total": 3064796 },
+        "genres": ["houston rap", "pop", "pop rap", "trap queen"],
+        "href": "https://api.spotify.com/v1/artists/181bsRPaVXVlUKXrxwZfHK",
+        "id": "181bsRPaVXVlUKXrxwZfHK",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/7bca4cddd5903957a727ae5b49936cd57d801d05",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/269960de592b3ccfd48e0b5c0e1cfa7159d10fdf",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/6a68a8b1db96036f9c2e12f62263ef457feec425",
+            "width": 160
+          }
+        ],
+        "name": "Megan Thee Stallion",
+        "popularity": 88,
+        "type": "artist",
+        "uri": "spotify:artist:181bsRPaVXVlUKXrxwZfHK"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/2P5sC9cVZDToPxyomzF1UH"
+        },
+        "followers": { "href": None, "total": 2012572 },
+        "genres": [
+          "conscious hip hop",
+          "hip hop",
+          "rap",
+          "underground hip hop"
+        ],
+        "href": "https://api.spotify.com/v1/artists/2P5sC9cVZDToPxyomzF1UH",
+        "id": "2P5sC9cVZDToPxyomzF1UH",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/e89a01b5b592893357538b16390807f90e6cbf32",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/c12d53a50ca54da66c7052fe58f2d69b8c50dbbc",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/6ac14f6bdc145bd23a50e37a5fb11c5c7b33d162",
+            "width": 160
+          }
+        ],
+        "name": "Joey Bada$$",
+        "popularity": 76,
+        "type": "artist",
+        "uri": "spotify:artist:2P5sC9cVZDToPxyomzF1UH"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/3TVXtAsR1Inumwj472S9r4"
+        },
+        "followers": { "href": None, "total": 52018643 },
+        "genres": [
+          "canadian hip hop",
+          "canadian pop",
+          "hip hop",
+          "pop rap",
+          "rap",
+          "toronto rap"
+        ],
+        "href": "https://api.spotify.com/v1/artists/3TVXtAsR1Inumwj472S9r4",
+        "id": "3TVXtAsR1Inumwj472S9r4",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/60cfab40c6bb160a1906be45276829d430058005",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/5ea794cf832550943d5f8122afcf5f23ee9d85b7",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/8eaace74aaca82eaccde400bbcab2653b9cf86e1",
+            "width": 160
+          }
+        ],
+        "name": "Drake",
+        "popularity": 97,
+        "type": "artist",
+        "uri": "spotify:artist:3TVXtAsR1Inumwj472S9r4"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/4kYSro6naA4h99UJvo89HB"
+        },
+        "followers": { "href": None, "total": 14013386 },
+        "genres": ["dance pop", "pop", "pop rap", "rap"],
+        "href": "https://api.spotify.com/v1/artists/4kYSro6naA4h99UJvo89HB",
+        "id": "4kYSro6naA4h99UJvo89HB",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/e9c7d7e446f19d445898eb362417542b134863af",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/99ce83f26fff46e9a17429f7149ee3ebaaf51aa5",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/5467a5777645a06eeb75329bced50a0bf54559c3",
+            "width": 160
+          }
+        ],
+        "name": "Cardi B",
+        "popularity": 89,
+        "type": "artist",
+        "uri": "spotify:artist:4kYSro6naA4h99UJvo89HB"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/4r63FhuTkUYltbVAg5TQnk"
+        },
+        "followers": { "href": None, "total": 5528331 },
+        "genres": ["north carolina hip hop", "rap"],
+        "href": "https://api.spotify.com/v1/artists/4r63FhuTkUYltbVAg5TQnk",
+        "id": "4r63FhuTkUYltbVAg5TQnk",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/610e4b5d2728ceebc10bd03e0eb836aa98ab9149",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/9fabb3d7dd075894af0b3805c129e433b9104b26",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/e41d5a1265e86ee82b510feca59f4e80234a8bc5",
+            "width": 160
+          }
+        ],
+        "name": "DaBaby",
+        "popularity": 94,
+        "type": "artist",
+        "uri": "spotify:artist:4r63FhuTkUYltbVAg5TQnk"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/699OTQXzgjhIYAHMy9RyPD"
+        },
+        "followers": { "href": None, "total": 4314961 },
+        "genres": ["atl hip hop", "rap", "trap"],
+        "href": "https://api.spotify.com/v1/artists/699OTQXzgjhIYAHMy9RyPD",
+        "id": "699OTQXzgjhIYAHMy9RyPD",
+        "images": [
+          {
+            "height": 1000,
+            "url": "https://i.scdn.co/image/5135930ac3774dff22b1935f40fa5be80ed99f47",
+            "width": 1000
+          },
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/24795c29b750fddb7e3b55095cf5fc39b95270bb",
+            "width": 640
+          },
+          {
+            "height": 200,
+            "url": "https://i.scdn.co/image/76f7faa1ff3fbc60c54941fd1d845cd617a1bfe5",
+            "width": 200
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/b46a167be16e4c8889fd0f27b8ca8e36eb3d8700",
+            "width": 64
+          }
+        ],
+        "name": "Playboi Carti",
+        "popularity": 88,
+        "type": "artist",
+        "uri": "spotify:artist:699OTQXzgjhIYAHMy9RyPD"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/6l3HvQ5sa6mXTsMTB19rO5"
+        },
+        "followers": { "href": None, "total": 12397413 },
+        "genres": [
+          "conscious hip hop",
+          "hip hop",
+          "north carolina hip hop",
+          "rap"
+        ],
+        "href": "https://api.spotify.com/v1/artists/6l3HvQ5sa6mXTsMTB19rO5",
+        "id": "6l3HvQ5sa6mXTsMTB19rO5",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/c58beb81196bbdda378b6746c51a10aace2f63a6",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/83ca0c5fcb501018a41994f8778772240c3a4cac",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/ff24214a2e41e0d0a4621b35c53e0573c2c6a65e",
+            "width": 160
+          }
+        ],
+        "name": "J. Cole",
+        "popularity": 87,
+        "type": "artist",
+        "uri": "spotify:artist:6l3HvQ5sa6mXTsMTB19rO5"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/7LvoDJUNGnOrPdGRzVtOJ9"
+        },
+        "followers": { "href": None, "total": 1076694 },
+        "genres": ["lgbtq+ hip hop", "nyc rap", "pop rap", "rap", "trap"],
+        "href": "https://api.spotify.com/v1/artists/7LvoDJUNGnOrPdGRzVtOJ9",
+        "id": "7LvoDJUNGnOrPdGRzVtOJ9",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ebc2576460cae07bcfb329e12739ffc50117231d",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/2eec0515935a57242ddf2b7d3698b22ac258402d",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/9030ed2697da9c3ba9c13916723457fc5792f693",
+            "width": 160
+          }
+        ],
+        "name": "Young M.A",
+        "popularity": 69,
+        "type": "artist",
+        "uri": "spotify:artist:7LvoDJUNGnOrPdGRzVtOJ9"
+      }
+    ],
+    "next": None,
+    "total": 9,
+    "cursors": { "after": None },
+    "limit": 20,
+    "href": "https://api.spotify.com/v1/me/following?type=artist&limit=20"
+  }
+}
