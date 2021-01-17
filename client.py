@@ -1,9 +1,10 @@
 ## PYTHON3
-import os, sys
+import os, sys, requests
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
+from speech_to_text import *
 
-## Configure authentication 
+## Configure authentication
 SPOTIFY_CLIENT_ID="56c1ae8e401640d6b90b8066c3821f95"
 SPOTIFY_CLIENT_SECRET="665045e7a1a44db7ae68b220bf1f12a3"
 SPOTIPY_REDIRECT_URI="https://abhivk23.github.io"
@@ -29,7 +30,14 @@ sp_user = spotipy.Spotify(auth=token)
 sp_client = spotipy.client.Spotify(auth=token)
 
 from recommendation import Recommender
-current_state = [0,0]
+
+url = 'https://api.nexmo.com/v1/files/c598ae96-2f87-44ef-a412-f28544737585?api_key=657a6239&api_secret=ENKun12C4T8dsMfn'
+r = requests.get(url, allow_redirects=True)
+
+open('404c2974-3c3e-45db-b3f8-2398956ff494.mp3', 'wb').write(r.content)
+
+current_state = transcribe_model_selection('404c2974-3c3e-45db-b3f8-2398956ff494.mp3', "phone_call")
+print(current_state)
 Rec = Recommender(sp_user, sp_client, current_state)
 uri = Rec.generate_track_rec()
 track_id = uri.split(":")[2] # TRACK ID
@@ -37,10 +45,10 @@ track_id = uri.split(":")[2] # TRACK ID
 artists = [artist['name'] for artist in sp_client.track(track_id)['artists']]
 print("The current vibe is: " + sp_client.track(track_id)['name'] + " by " + artists[0]) # expand to get all artists
 
-""" 
+"""
 ## Client API calls
 print(sp_client.track(track_id)['name']) # TRACK NAME
-print(sp_client.audio_features([track_id])) # FEATURES 
+print(sp_client.audio_features([track_id])) # FEATURES
 """
 """ ## User API calls
 followed = sp_user.current_user_followed_artists(limit=20, after=None)['artists']['items'] ## FOLLOWED_ARTISTS (list)
@@ -49,9 +57,9 @@ for artist in followed:
 
     for track in res['tracks'][:10]:
         print(track['uri']) """
-""" 
+"""
 for song in Rec.user_lib:
     uri = song['track']['uri']
     track_id = uri.split(":")[2]
-    print(sp_client.audio_analysis(track_id)) 
+    print(sp_client.audio_analysis(track_id))
 """

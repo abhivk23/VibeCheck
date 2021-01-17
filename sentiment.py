@@ -15,3 +15,4 @@ def analyze_sentiment(text_content):
 
     print("Text: {}".format(text_content))
     print("Sentiment: {}, {}".format(sentiment.score, sentiment.magnitude))
+    return [sentiment.score, sentiment.magnitude]

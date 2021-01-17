@@ -1,6 +1,5 @@
 from google.cloud import speech
-import requests
-from sentiment.py import .
+from sentiment import *
 
 def transcribe_model_selection(speech_file, model):
     """Transcribe the given audio file synchronously with
@@ -29,10 +28,4 @@ def transcribe_model_selection(speech_file, model):
         print("First alternative of result {}".format(i))
         print(u"Transcript: {}".format(alternative.transcript))
 
-print(recording_url)
-url = 'https://api.nexmo.com/v1/files/c598ae96-2f87-44ef-a412-f28544737585?api_key=657a6239&api_secret=ENKun12C4T8dsMfn'
-r = requests.get(url, allow_redirects=True)
-
-open('e2e393d7-d698-4fac-829d-6677db5c470a.mp3', 'wb').write(r.content)
-
-transcribe_model_selection('e2e393d7-d698-4fac-829d-6677db5c470a.mp3', "phone_call")
+    return analyze_sentiment(alternative.transcript)
