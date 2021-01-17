@@ -26,7 +26,7 @@ const onInboundCall = (request, response) => {
 const onRecording = (request, response) => {
   const recording_url = request.body.recording_url
   console.log(request.body)
-  console.log(`Recording URL = ${recording_url}`)
+  console.log(`Your call was successfully recorded! Recording URL = ${recording_url}`)
 
   response.status(204).send()
 }

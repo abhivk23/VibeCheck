@@ -6,6 +6,7 @@ def transcribe_model_selection(speech_file, model):
     the selected model."""
     from google.cloud import speech
 
+    print('Transcribing speech file...')
     client = speech.SpeechClient()
 
     with open(speech_file, "rb") as audio_file:
@@ -24,8 +25,6 @@ def transcribe_model_selection(speech_file, model):
 
     for i, result in enumerate(response.results):
         alternative = result.alternatives[0]
-        print("-" * 20)
-        print("First alternative of result {}".format(i))
         print(u"Transcript: {}".format(alternative.transcript))
 
     return analyze_sentiment(alternative.transcript)

@@ -5,7 +5,8 @@
 import os, sys, requests
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
-#from speech_to_text import transcribe_model_selection
+from speech_to_text import transcribe_model_selection
+from sentiment import analyze_sentiment
 
 ## Configure authentication
 SPOTIFY_CLIENT_ID="56c1ae8e401640d6b90b8066c3821f95"
@@ -30,16 +31,12 @@ except:
 sp_user = spotipy.Spotify(auth=token)
 sp_client = spotipy.client.Spotify(auth=token)
 
-""" # Fetch phone transcription
-url = 'https://api.nexmo.com/v1/files/c598ae96-2f87-44ef-a412-f28544737585?api_key=657a6239&api_secret=ENKun12C4T8dsMfn' # !!! hide key
-r = requests.get(url, allow_redirects=True)
-open('404c2974-3c3e-45db-b3f8-2398956ff494.mp3', 'wb').write(r.content)
 
-# Analyze sentiment of call transcrtip and save as ext_vibes
-## ext_vibes = [strength, magnitude]
-ext_vibes = transcribe_model_selection('404c2974-3c3e-45db-b3f8-2398956ff494.mp3', "phone_call") """
-ext_vibes = [-0.44, 2.79] 
-print("The external_vibes: " + ext_vibes + "which means we're feeling ~negative vibes, with ~low energy (sad)")
+
+ext_vibes = analyze_sentiment("I'm kinda nervous about this demonstration I'm doing right now. We spent the past weekend working on this and I hope I don't mess it up.")
+print("Building your playlist...")
+#ext_vibes = [-0.44, 2.79]
+#print("The external_vibes: " + ext_vibes + "which means we're feeling ~negative vibes, with ~low energy (sad)")
 
 ## Map [strength, magnitude] --> [valence, energy] assuming unif. dist.
 ## strength: [-1.0, 1.0] ; magnitude: [0.0 , ~13] (technically LUB=#inf, but approx. for relevant input)
