@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-echo hi
-export SPOTIFY_CLIENT_ID=56c1ae8e401640d6b90b8066c3821f95
-export SPOTIFY_CLIENT_SECRET=665045e7a1a44db7ae68b220bf1f12a3
-echo $SPOTIFY_CLIENT_ID
