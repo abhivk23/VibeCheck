@@ -31,7 +31,6 @@ sp_user = spotipy.Spotify(auth=token)
 sp_client = spotipy.client.Spotify(auth=token)
 
 """ # Fetch phone transcription
-url = 'https://api.nexmo.com/v1/files/c598ae96-2f87-44ef-a412-f28544737585?api_key=657a6239&api_secret=ENKun12C4T8dsMfn' # !!! hide key
 r = requests.get(url, allow_redirects=True)
 open('404c2974-3c3e-45db-b3f8-2398956ff494.mp3', 'wb').write(r.content)
 
