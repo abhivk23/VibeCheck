@@ -2,11 +2,6 @@
 import spotipy
 import math
 
-""" class User:
-    def __init(self, user_sp, client_sp):
-        self.sp = user_sp
-        self.client = client_sp """
-
 def distance_between(P1, P2):
         x_dist = P2[0] - P1[0]
         y_dist = P2[1] - P1[1]
@@ -15,19 +10,18 @@ def distance_between(P1, P2):
 class Recommender:
     def __init__(self, sp_user, sp_client, curr_state):
         """
-            User, [valence, rel_activation] --> 
+            params: spotipy.Spotify, spotipy.client.Spotify, [valence, energy] --> Recommender
         """
         self.user = sp_user
         self.client = sp_client
-        self.current_state = curr_state
+        self.current_state = curr_state ## strength: [0.0, 1.0] ; magnitude: [0.0 , 1.0]
         self.followed_artists = self.user.current_user_followed_artists(limit=10, after=None)['artists']['items'] # want to sort by most preferred, rn j first 20
 
-        #self.user_lib = self.sp.current_user_saved_tracks()['items']
-        #self.lib_sentiment = generate_library_sentimenet()
-
+    # want to make this generic for any 
     def generate_trackSentiment_distances(self, n):
         """
-           n (top_n) --> [list[distances], list[list[valence, liveliness]]] (2x2 matrix of artists' top n songs' features)
+            Calculate distance between current_state and set of tracks' (followed_artists) sentiment
+            n (top_n) --> [list[distances], list[list[valence, energy]]] (2x2 matrix of artists' top n songs' features)
         """
         tracks = []
         distances_from_currentState = []
@@ -36,11 +30,10 @@ class Recommender:
             top_n = artist_top_tracks['tracks'][:n] # top number is arbitrary
             for track in top_n:
                 audio_features = self.client.audio_features([track['uri']])[0]
-                sentiment_point = [audio_features['valence'], audio_features['liveness']] # need to re-map to common basis
+                sentiment_point = [audio_features['valence'], audio_features['energy']] ## valence: [0.0, 1.0] ; energy: [0.0 , 1.0]
 
                 distances_from_currentState.append(distance_between(self.current_state, sentiment_point))
                 tracks.append(track['uri'])
-
         return tracks, distances_from_currentState
 
     def generate_track_rec(self):
