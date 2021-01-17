@@ -1,16 +1,16 @@
 #########################################################################
-# Provide authentication keys in main call:
-# $ python3 client.py SPOTIFY_USERNAME SPOTIFY_CLIENT_SECRET NEXMO_SECRET
+# Remember to provide authentication keys.
+# Future: $ python3 client.py SPOTIFY_USERNAME SPOTIFY_CLIENT_SECRET NEXMO_SECRET
 #########################################################################
 import os, sys, requests
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
-from speech_to_text import transcribe_model_selection
-from sentiment import analyze_sentiment
+#from speech_to_text import transcribe_model_selection
+#from sentiment import analyze_sentiment
 
 ## Configure authentication
 SPOTIFY_CLIENT_ID="56c1ae8e401640d6b90b8066c3821f95"
-SPOTIFY_CLIENT_SECRET="665045e7a1a44db7ae68b220bf1f12a3" # !!! hide key
+SPOTIFY_CLIENT_SECRET="" # !!! hide key
 SPOTIPY_REDIRECT_URI="https://abhivk23.github.io"
 REQUESTED_SCOPES="user-library-read, user-follow-read, playlist-modify-public, playlist-modify-private"
 if len(sys.argv)>1:
@@ -31,9 +31,12 @@ sp_user = spotipy.Spotify(auth=token)
 sp_client = spotipy.client.Spotify(auth=token)
 
 
-
-ext_vibes = analyze_sentiment("I'm kinda nervous about this demonstration I'm doing right now. We spent the past weekend working on this and I hope I don't mess it up.")
-#ext_vibes = [-0.20000000298023224, 0.5]
+""" url = ''
+r = requests.get(url, allow_redirects=True)
+open('d179e484-c31e-400e-88ed-60508a4a8864.mp3', 'wb').write(r.content)
+ext_vibes = transcribe_model_selection('d179e484-c31e-400e-88ed-60508a4a8864.mp3', "phone_call") 
+ext_vibes = analyze_sentiment("I'm kinda nervous about this demonstration I'm doing right now. We spent the past weekend working on this and I hope I don't mess it up.")"""
+ext_vibes = [ -0.800000011920929, 2.4000000953674316]
 
 ## Map [strength, magnitude] --> [valence, energy] assuming unif. dist.
 ## strength: [-1.0, 1.0] ; magnitude: [0.0 , ~13] (technically LUB=#inf, but approx. for relevant input)
@@ -52,7 +55,7 @@ artists = [artist['name'] for artist in sp_client.track(track_id)['artists']]
 print("Your VibeCheck recommendation is: " + sp_client.track(track_id)['name'] + " by " + artists[0]) # expand to get all artists
 
 # Generate a shareable playlist of some other similarly feeling songs
-playlist_url = Rec.generate_playlist(username, "vibecheck123", 10, "that's an awfully hot coffee pot")
+playlist_url = Rec.generate_playlist(username, "vibecheck4", 10, "Happy")
 print("Check this playlist out to continue to ride the vibe: " + playlist_url)
 
 """
