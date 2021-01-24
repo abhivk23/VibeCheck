@@ -1,6 +1,6 @@
 ## Recommendation module linking text_sentiment score w sentiment scores from user_library
 import spotipy
-import spotipy.oauth2
+from spotipy.oauth2 import SpotifyOAuth
 import math
 import os
 
@@ -10,12 +10,10 @@ def distance_between(P1, P2):
         return math.sqrt(x_dist ** 2 + y_dist ** 2)
 
 class Recommender:
-    def __init__(self, sp_user, sp_client, curr_state, SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET):
+    def __init__(self, sp_user, sp_client, curr_state):
         """
             params: spotipy.Spotify, spotipy.client.Spotify, [valence, energy] --> Recommender
         """
-        self.user_id = SPOTIFY_CLIENT_ID
-        self.secret_id = SPOTIFY_CLIENT_SECRET
         self.user = sp_user
         self.client = sp_client
         self.current_state = curr_state ## strength: [0.0, 1.0] ; magnitude: [0.0 , 1.0]
@@ -23,8 +21,8 @@ class Recommender:
         self.followed_artists = self.user.current_user_followed_artists(limit=10, after=None)['artists']['items'] # want to sort by most preferred, rn j first 20
 
     # want to make this generic for any set of tracks we might want to test
-    ## in the future, use Browse API Recommendations call as a benchmark to the metrics we test
-    ## for like science ig
+    # in the future, use Browse API Recommendations call as a benchmark to the metrics we test
+    # for like science ig
     def generate_trackSentiment_distances(self, n):
         """
             Calculate distance between current_state and set of tracks' (followed_artists) sentiment
@@ -51,25 +49,24 @@ class Recommender:
         return sorted(d.items(), key=lambda kv: kv[1])[0][0]
 
     # generalize for other identifiers maybe
-    def generate_playlist(self, token, pl_name, pl_len, pl_desc):
+    def generate_playlist(self, username, pl_name, pl_len, pl_desc):
         """
             track_id (song rec) --> playlist_URL (?) (song recommendation) 
         """
 
         ## !! need to reauthorize the client for some reason, this should be handled better for sure
-        SPOTIFY_CLIENT_ID="56c1ae8e401640d6b90b8066c3821f95"
-        SPOTIFY_CLIENT_SECRET="" # !!! hide key
-        SPOTIPY_REDIRECT_URI="https://abhivk23.github.io"
-        REQUESTED_SCOPES="user-library-read, user-follow-read, playlist-modify-public, playlist-modify-private"
-        username = "npby7v4xwgsty64kobmk9xb3w"
+        SPOTIFY_CLIENT_ID=os.environ['SPOTIFY_CLIENT_ID']
+        SPOTIFY_CLIENT_SECRET=os.environ['SPOTIFY_CLIENT_SECRET'] # !!! hide key
+        SPOTIFY_REDIRECT_URI=os.environ['SPOTIFY_REDIRECT_URI']
+        username = os.environ['username']
+        REQUESTED_SCOPES="playlist-modify-public, playlist-modify-private"
 
         # Generate Spotify auth_token
         try:
-            token = spotipy.util.prompt_for_user_token(username, scope=REQUESTED_SCOPES, client_id=SPOTIFY_CLIENT_ID, client_secret=SPOTIFY_CLIENT_SECRET, redirect_uri=SPOTIPY_REDIRECT_URI)
-
+            token = spotipy.util.prompt_for_user_token(username, scope=REQUESTED_SCOPES, client_id=SPOTIFY_CLIENT_ID, client_secret=SPOTIFY_CLIENT_SECRET, redirect_uri=SPOTIFY_REDIRECT_URI)
         except:
             os.remove(f".cache-{username}")
-            token = spotipy.util.prompt_for_user_token(username, scope=REQUESTED_SCOPES, client_id=SPOTIFY_CLIENT_ID, client_secret=SPOTIFY_CLIENT_SECRET, redirect_uri=SPOTIPY_REDIRECT_URI)
+            token = spotipy.util.prompt_for_user_token(username, scope=REQUESTED_SCOPES, client_id=SPOTIFY_CLIENT_ID, client_secret=SPOTIFY_CLIENT_SECRET, redirect_uri=SPOTIFY_REDIRECT_URI)
         
         # Configure user/client
         sp_user = spotipy.Spotify(auth=token)
