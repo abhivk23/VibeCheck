@@ -38,9 +38,9 @@ open('demo_audio/d179e484-c31e-400e-88ed-60508a4a8864.mp3', 'wb').write(r.conten
 
 ## The following are all equivalent test cases ##
 ext_vibes = transcribe_model_selection('demo_audio/d179e484-c31e-400e-88ed-60508a4a8864.mp3', "phone_call") 
-ext_vibes = [ -0.800000011920929, 2.4000000953674316] 
-"""
 ext_vibes = analyze_sentiment("I'm kinda nervous about this demonstration I'm doing right now. We spent the past weekend working on this and I hope I don't mess it up.")
+"""
+ext_vibes = [ -0.800000011920929, 2.4000000953674316]
 
 ## Map [strength, magnitude] --> [valence, energy] assuming unif. dist.
 # strength: [-1.0, 1.0] ; magnitude: [0.0 , ~13] (technically LUB=#inf, but approx. for relevant input)
